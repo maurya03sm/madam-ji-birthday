@@ -61,15 +61,7 @@
 
   <div class="container">
     <h1>🎂 Happy Birthday, <span style="color:#9d4edd">Madam Ji</span> 🎂</h1>
-    <h2>Counting down to your special day ✨</h2>
-
-    <!-- Countdown -->
-    <div class="countdown">
-      <div class="cd-box"><div class="cd-num" id="d">--</div><div class="cd-label">Days</div></div>
-      <div class="cd-box"><div class="cd-num" id="h">--</div><div class="cd-label">Hours</div></div>
-      <div class="cd-box"><div class="cd-num" id="m">--</div><div class="cd-label">Minutes</div></div>
-      <div class="cd-box"><div class="cd-num" id="s">--</div><div class="cd-label">Seconds</div></div>
-    </div>
+   
 
     <div class="card">
       <p>Today is your day, and I want to make it special, but I can’t. I’m really sorry for that.<br><br>But maybe this will bring a smile to your face.<br><br><strong>Happy Birthday, Madam Ji 🎉</strong></p>
@@ -161,25 +153,6 @@
 
     showSlide(index);
 
-    // Countdown to next Feb 12
-    let birthdayTriggered = false;
-    function updateCountdown(){
-      const now = new Date();
-      let target = new Date(now.getFullYear(), 1, 12, 0, 0, 0);
-      if (now > target) target = new Date(now.getFullYear() + 1, 1, 12, 0, 0, 0);
-      const diff = target - now;
-
-      if (diff <= 0 && !birthdayTriggered) {
-        birthdayTriggered = true;
-        showBirthdayReveal();
-      }
-
-      d.textContent = Math.max(0, Math.floor(diff / (1000*60*60*24)));
-      h.textContent = Math.max(0, Math.floor((diff / (1000*60*60)) % 24));
-      m.textContent = Math.max(0, Math.floor((diff / (1000*60)) % 60));
-      s.textContent = Math.max(0, Math.floor((diff / 1000) % 60));
-    }
-    updateCountdown(); setInterval(updateCountdown, 1000);
 
     function showBirthdayReveal(){
       document.body.insertAdjacentHTML('beforeend', `
@@ -225,3 +198,4 @@
   </script>
 </body>
 </html>
+
